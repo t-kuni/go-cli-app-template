@@ -2,7 +2,7 @@
 // Source: clock.go
 
 // Package main is a generated GoMock package.
-package main
+package internal
 
 import (
 	gomock "github.com/golang/mock/gomock"

@@ -3,10 +3,11 @@ package main
 import (
 	"fmt"
 	"github.com/sarulabs/di"
+	"go-cli-app-skeleton/internal"
 )
 
 func main() {
-	generator := App().Get("quotation-generator").(QuotationGenerator)
+	generator := App().Get("quotation-generator").(internal.QuotationGenerator)
 
 	fmt.Printf("名言： %s\n", generator.GenerateQuotation())
 }
@@ -30,15 +31,15 @@ func buildContainer(postHook func(builder *di.Builder)) di.Container {
 		{
 			Name: "quotation-generator",
 			Build: func(ctn di.Container) (interface{}, error) {
-				return RandomQuotationGenerator{
-					clocker: App().Get("clocker").(Clocker),
+				return internal.RandomQuotationGenerator{
+					Clocker: App().Get("clocker").(internal.Clocker),
 				}, nil
 			},
 		},
 		{
 			Name: "clocker",
 			Build: func(ctn di.Container) (interface{}, error) {
-				return Clock{}, nil
+				return internal.Clock{}, nil
 			},
 		},
 	}...)

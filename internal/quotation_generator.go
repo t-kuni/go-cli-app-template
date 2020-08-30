@@ -1,4 +1,4 @@
-package main
+package internal
 
 // インタフェース
 type QuotationGenerator interface {
@@ -25,12 +25,12 @@ func (generator EnglishQuotationGenerator) GenerateQuotation() string {
 
 // 構造体
 type RandomQuotationGenerator struct {
-	clocker Clocker
+	Clocker Clocker
 }
 
 // 構造体に関数を追加
 func (s RandomQuotationGenerator) GenerateQuotation() string {
-	t := s.clocker.Now()
+	t := s.Clocker.Now()
 	if t.Second()%2 == 1 {
 		return "時は金なり"
 	} else {

@@ -6,29 +6,44 @@ import (
 )
 
 func main() {
-	app := createApp()
-
-	generator := app.Get("quotation-generator").(QuotationGenerator)
+	generator := App().Get("quotation-generator").(QuotationGenerator)
 
 	fmt.Printf("名言： %s\n", generator.GenerateQuotation())
-	fmt.Printf("%d", example(1, 2))
 }
 
-func example(a int, b int) int {
-	return a + b
+var app di.Container
+
+func App() di.Container {
+	if app != nil {
+		return app
+	}
+
+	app := buildContainer(func(builder *di.Builder) {})
+
+	return app
 }
 
-func createApp() di.Container {
+func buildContainer(postHook func(builder *di.Builder)) di.Container {
 	builder, _ := di.NewBuilder()
 
 	builder.Add([]di.Def{
 		{
 			Name: "quotation-generator",
 			Build: func(ctn di.Container) (interface{}, error) {
-				return SimpleQuotationGenerator{}, nil
+				return RandomQuotationGenerator{
+					clocker: App().Get("clocker").(Clocker),
+				}, nil
+			},
+		},
+		{
+			Name: "clocker",
+			Build: func(ctn di.Container) (interface{}, error) {
+				return Clock{}, nil
 			},
 		},
 	}...)
+
+	postHook(builder)
 
 	return builder.Build()
 }

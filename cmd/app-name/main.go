@@ -2,13 +2,23 @@ package main
 
 import (
 	"fmt"
+	"github.com/joho/godotenv"
 	"github.com/sarulabs/di"
 	"go-cli-app-skeleton/internal"
+	"log"
+	"os"
 )
 
 func main() {
-	generator := App().Get("quotation-generator").(internal.QuotationGenerator)
+	err := godotenv.Load()
+	if err != nil {
+		log.Fatal("Error loading .env file")
+	}
 
+	appName := os.Getenv("APP_NAME")
+	fmt.Printf("アプリ名： %s\n", appName)
+
+	generator := App().Get("quotation-generator").(internal.QuotationGenerator)
 	fmt.Printf("名言： %s\n", generator.GenerateQuotation())
 }
 

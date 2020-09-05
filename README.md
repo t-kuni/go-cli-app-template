@@ -1,6 +1,6 @@
 # About
 
-This repository is project skeleton for TypeScript CLI application.
+This repository is project skeleton for Go CLI application.
 
 # Usage
 

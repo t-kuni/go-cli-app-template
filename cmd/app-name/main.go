@@ -4,7 +4,7 @@ import (
 	"fmt"
 	"github.com/joho/godotenv"
 	"github.com/sarulabs/di"
-	"go-cli-app-skeleton/internal"
+	"github.com/t-kuni/go-cli-app-skeleton/internal"
 	"log"
 	"os"
 )

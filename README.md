@@ -2,6 +2,10 @@
 
 This repository is project skeleton for Go CLI application.
 
+# Requirements
+
+go 1.18+
+
 # Usage
 
 ```
@@ -10,20 +14,14 @@ cd [ProjectName]
 rm -rf .git 
 ```
 
-# Generate Mock
-
-```
-mockgen -source=clock.go -package=main -destination=clock_mock.go
-```
-
 # Build
 
 ```
-docker build --tag example-container .
+make build
 ```
 
 # Run
 
 ```
-docker run example-container example
+go run ./main.go command1
 ```

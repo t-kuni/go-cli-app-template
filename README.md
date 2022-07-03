@@ -1,6 +1,6 @@
 # About
 
-This repository is project skeleton for Go CLI application.
+Project skeleton for Go CLI application.
 
 # Features
 

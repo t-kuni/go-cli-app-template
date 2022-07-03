@@ -4,7 +4,9 @@ This repository is project skeleton for Go CLI application.
 
 # Requirements
 
-go 1.18+
+* go 1.18+
+* gotestsum
+* gomock
 
 # Usage
 
@@ -24,4 +26,10 @@ make build
 
 ```
 go run ./main.go command1
+```
+
+# Run test
+
+```
+make test
 ```

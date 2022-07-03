@@ -47,5 +47,5 @@ make test
 # Build
 docker build -t go-cli-app-skeleton .
 # Run
-docker run go-cli-app-skeleton
+docker run go-cli-app-skeleton command1
 ```

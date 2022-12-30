@@ -2,8 +2,8 @@ package usecase
 
 import (
 	"github.com/samber/do"
-	"github.com/t-kuni/go-cli-app-skeleton/domain/infrastructure/system"
-	"github.com/t-kuni/go-cli-app-skeleton/domain/services"
+	"github.com/t-kuni/go-cli-app-template/domain/infrastructure/system"
+	"github.com/t-kuni/go-cli-app-template/domain/services"
 	"os"
 )
 

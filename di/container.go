@@ -2,10 +2,10 @@ package di
 
 import (
 	"github.com/samber/do"
-	"github.com/t-kuni/go-cli-app-skeleton/domain/services"
-	"github.com/t-kuni/go-cli-app-skeleton/domain/usecase"
-	"github.com/t-kuni/go-cli-app-skeleton/infrastructure/system"
-	"github.com/t-kuni/go-cli-app-skeleton/presentation/command"
+	"github.com/t-kuni/go-cli-app-template/domain/services"
+	"github.com/t-kuni/go-cli-app-template/domain/usecase"
+	"github.com/t-kuni/go-cli-app-template/infrastructure/system"
+	"github.com/t-kuni/go-cli-app-template/presentation/command"
 )
 
 func NewContainer() *do.Injector {

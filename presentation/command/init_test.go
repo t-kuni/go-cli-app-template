@@ -4,7 +4,7 @@ import (
 	"github.com/golang/mock/gomock"
 	"github.com/joho/godotenv"
 	"github.com/samber/do"
-	"github.com/t-kuni/go-cli-app-skeleton/di"
+	"github.com/t-kuni/go-cli-app-template/di"
 	"os"
 	"path/filepath"
 	"testing"

@@ -4,8 +4,8 @@ import (
 	"context"
 	"github.com/joho/godotenv"
 	"github.com/samber/do"
-	"github.com/t-kuni/go-cli-app-skeleton/di"
-	"github.com/t-kuni/go-cli-app-skeleton/presentation/command"
+	"github.com/t-kuni/go-cli-app-template/di"
+	"github.com/t-kuni/go-cli-app-template/presentation/command"
 	"os"
 )
 

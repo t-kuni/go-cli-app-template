@@ -2,7 +2,7 @@ package services
 
 import (
 	"github.com/samber/do"
-	"github.com/t-kuni/go-cli-app-skeleton/domain/infrastructure/system"
+	"github.com/t-kuni/go-cli-app-template/domain/infrastructure/system"
 )
 
 type IQuotationGenerator interface {

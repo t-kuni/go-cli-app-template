@@ -3,7 +3,7 @@ package command
 import (
 	"github.com/samber/do"
 	"github.com/spf13/cobra"
-	"github.com/t-kuni/go-cli-app-skeleton/domain/usecase"
+	"github.com/t-kuni/go-cli-app-template/domain/usecase"
 )
 
 type Command1 struct {

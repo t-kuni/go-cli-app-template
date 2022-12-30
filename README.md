@@ -51,3 +51,7 @@ docker build -t go-cli-app-template .
 # Run
 docker run go-cli-app-template command1
 ```
+
+# TODO
+
+* [ ] error handling

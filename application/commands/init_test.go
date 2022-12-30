@@ -1,4 +1,4 @@
-package command_test
+package commands_test
 
 import (
 	"github.com/golang/mock/gomock"

@@ -1,10 +1,10 @@
-package command_test
+package commands_test
 
 import (
 	"context"
 	"github.com/samber/do"
+	"github.com/t-kuni/go-cli-app-template/application/commands"
 	"github.com/t-kuni/go-cli-app-template/domain/infrastructure/system"
-	"github.com/t-kuni/go-cli-app-template/presentation/command"
 	"testing"
 	"time"
 )
@@ -35,7 +35,7 @@ func TestCommand1(t *testing.T) {
 		//
 		// Execute
 		//
-		testee := do.MustInvoke[*command.RootCommand](cont.DI)
+		testee := do.MustInvoke[*commands.RootCommand](cont.DI)
 		cmd := testee.CobraCommand
 		cmd.SetArgs([]string{"command1"})
 		err := cmd.ExecuteContext(context.Background())

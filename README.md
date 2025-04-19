@@ -52,6 +52,16 @@ docker build -t go-cli-app-template .
 docker run go-cli-app-template command1
 ```
 
+# Devcontainer Setup
+
+`devcontainer`を使用して開発環境をセットアップするには、以下の手順を実行してください。
+
+1. VSCodeで当リポジトリを開きます
+2. コマンドパレット（`Ctrl+Shift+P`）を開き、`Dev-Containers: Reopen in Container`を選択します。
+
+これで、コンテナ内で開発環境がセットアップされます。
+
 # TODO
 
 * [ ] error handling
+`

@@ -5,7 +5,7 @@ import (
 
 	"github.com/rotisserie/eris"
 	"github.com/samber/do"
-	"github.com/t-kuni/go-cli-app-template/domain/infrastructure/api"
+	"github.com/t-kuni/go-cli-app-template/domain/infrastructure/external"
 	"github.com/t-kuni/go-cli-app-template/domain/infrastructure/system"
 	"github.com/t-kuni/go-cli-app-template/domain/services"
 )
@@ -13,14 +13,14 @@ import (
 type Command1UseCase struct {
 	quotationGenerator services.IQuotationGenerator
 	stdio              system.IStdio
-	todoClient         api.ITodoClient
+	todoClient         external.ITodoClient
 }
 
 func NewCommand1UseCase(i *do.Injector) (*Command1UseCase, error) {
 	return &Command1UseCase{
 		quotationGenerator: do.MustInvoke[services.IQuotationGenerator](i),
 		stdio:              do.MustInvoke[system.IStdio](i),
-		todoClient:         do.MustInvoke[api.ITodoClient](i),
+		todoClient:         do.MustInvoke[external.ITodoClient](i),
 	}, nil
 }
 

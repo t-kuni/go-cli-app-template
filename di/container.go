@@ -19,6 +19,7 @@ func NewContainer() *do.Injector {
 	// Infrastructure
 	do.Provide(injector, system.NewTimer)
 	do.Provide(injector, system.NewStdio)
+	do.Provide(injector, system.NewLogger)
 	do.Provide(injector, external.NewTodoClient)
 
 	// UseCase

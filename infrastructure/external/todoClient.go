@@ -8,7 +8,7 @@ import (
 
 	"github.com/rotisserie/eris"
 	"github.com/samber/do"
-	"github.com/t-kuni/go-cli-app-template/domain/infrastructure/api"
+	"github.com/t-kuni/go-cli-app-template/domain/infrastructure/external"
 	"github.com/t-kuni/go-cli-app-template/domain/model"
 )
 
@@ -18,7 +18,7 @@ type TodoClient struct {
 }
 
 // NewTodoClient はTodoClientのインスタンスを生成します
-func NewTodoClient(i *do.Injector) (api.ITodoClient, error) {
+func NewTodoClient(i *do.Injector) (external.ITodoClient, error) {
 	return &TodoClient{
 		baseURL: "https://jsonplaceholder.typicode.com",
 	}, nil

@@ -29,6 +29,7 @@ func TestCommand1(t *testing.T) {
 			mock := system.NewMockIStdio(cont.MockCtrl)
 			mock.EXPECT().Printf("App name： %s\n", "app-name").Times(1)
 			mock.EXPECT().Printf("Quotation： %s\n", "money comes and goes; money goes around and around").Times(1)
+			mock.EXPECT().Printf("Todo title： %s\n", "delectus aut autem").Times(1)
 			do.OverrideValue[system.IStdio](cont.DI, mock)
 		}
 

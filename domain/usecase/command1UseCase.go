@@ -3,6 +3,7 @@ package usecase
 import (
 	"os"
 
+	"github.com/rotisserie/eris"
 	"github.com/samber/do"
 	"github.com/t-kuni/go-cli-app-template/domain/infrastructure/api"
 	"github.com/t-kuni/go-cli-app-template/domain/infrastructure/system"
@@ -33,7 +34,7 @@ func (u Command1UseCase) Execute() error {
 	// JSONPlaceholderからTodoを取得
 	todo, err := u.todoClient.FetchTodo(1)
 	if err != nil {
-		return err
+		return eris.Wrap(err, "Todoの取得に失敗しました")
 	}
 
 	// Todoのタイトルを出力

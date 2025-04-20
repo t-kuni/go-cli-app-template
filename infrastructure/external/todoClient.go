@@ -6,6 +6,7 @@ import (
 	"io"
 	"net/http"
 
+	"github.com/rotisserie/eris"
 	"github.com/samber/do"
 	"github.com/t-kuni/go-cli-app-template/domain/infrastructure/api"
 	"github.com/t-kuni/go-cli-app-template/domain/model"
@@ -29,22 +30,22 @@ func (c *TodoClient) FetchTodo(id int) (*model.Todo, error) {
 
 	resp, err := http.Get(url)
 	if err != nil {
-		return nil, fmt.Errorf("HTTPリクエストに失敗しました: %w", err)
+		return nil, eris.Wrap(err, "HTTPリクエストに失敗しました")
 	}
 	defer resp.Body.Close()
 
 	if resp.StatusCode != http.StatusOK {
-		return nil, fmt.Errorf("HTTPリクエストが失敗しました: ステータスコード %d", resp.StatusCode)
+		return nil, eris.New(fmt.Sprintf("HTTPリクエストが失敗しました: ステータスコード %d", resp.StatusCode))
 	}
 
 	body, err := io.ReadAll(resp.Body)
 	if err != nil {
-		return nil, fmt.Errorf("レスポンスボディの読み取りに失敗しました: %w", err)
+		return nil, eris.Wrap(err, "レスポンスボディの読み取りに失敗しました")
 	}
 
 	var todo model.Todo
 	if err := json.Unmarshal(body, &todo); err != nil {
-		return nil, fmt.Errorf("JSONのパースに失敗しました: %w", err)
+		return nil, eris.Wrap(err, "JSONのパースに失敗しました")
 	}
 
 	return &todo, nil

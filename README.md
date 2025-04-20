@@ -64,4 +64,5 @@ docker run go-cli-app-template command1
 # TODO
 
 * [ ] error handling
-`
+` [ ] go toolsに移行
+* [ ] golang/mockをuber-go/mockに置き換え

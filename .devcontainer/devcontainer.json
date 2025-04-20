@@ -9,6 +9,7 @@
   },
   "extensions": [
     "golang.go",
-    "ms-vscode.go"
+    "ms-vscode.go",
+    "saoudrizwan.claude-dev"
   ]
 }

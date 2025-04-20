@@ -13,7 +13,7 @@ Project template for Go CLI application.
 * go 1.18+
   * [How to install and switch between multiple versions of golang](https://gist.github.com/t-kuni/4e23b59f16557d704974b1ce6b49e6bb)
 * [gotestsum](https://github.com/gotestyourself/gotestsum)
-* [gomock](https://github.com/golang/mock)
+* [gomock](https://go.uber.org/mock)
 
 # Usage
 

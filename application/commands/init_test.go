@@ -1,10 +1,10 @@
 package commands_test
 
 import (
-	"github.com/golang/mock/gomock"
 	"github.com/joho/godotenv"
 	"github.com/samber/do"
 	"github.com/t-kuni/go-cli-app-template/di"
+	"go.uber.org/mock/gomock"
 	"os"
 	"path/filepath"
 	"testing"

@@ -36,6 +36,20 @@ func TestCommand1(t *testing.T) {
 			mock.EXPECT().Printf("Todo title： %s\n", "delectus aut autem").Times(1)
 			do.OverrideValue[system.IStdio](cont.DI, mock)
 		}
+		{
+			mock := external.NewMockITodoClient(cont.MockCtrl)
+			todo := &model.Todo{
+				UserID:    1,
+				ID:        1,
+				Title:     "delectus aut autem",
+				Completed: false,
+			}
+			mock.
+				EXPECT().
+				FetchTodo(1).
+				Return(todo, nil)
+			do.OverrideValue[external.ITodoClient](cont.DI, mock)
+		}
 
 		//
 		// Execute
